@@ -59,9 +59,11 @@ const Ticket: React.FC<Props> = ({ ticketId, name, onDeleteTicket }) => {
   );
 
   const onDeleteClick = useCallback(async () => {
-    setStatus("pending");
-    const updatedTickets = await deleteTicket({ ticketId });
-    onDeleteTicket(updatedTickets);
+    showModal("Are you sure?", "Do you really want to delete it?", async () => {
+      setStatus("pending");
+      const updatedTickets = await deleteTicket({ ticketId });
+      onDeleteTicket(updatedTickets);
+    });
   }, [onDeleteTicket, ticketId]);
 
   const onRemoveTaskClick = useCallback(
