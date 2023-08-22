@@ -105,3 +105,9 @@ a {
     color-scheme: dark;
   }
 }
+
+textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {   
+  border-color: transparent;
+  box-shadow: 0;
+  outline: 0 none;
+}
