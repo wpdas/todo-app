@@ -34,7 +34,9 @@ const Ticket: React.FC<Props> = ({ ticketId, name, onDeleteTicket }) => {
 
   useEffect(() => {
     getTasks({ ticketId }).then((tasks) => setTasks(tasks));
-    setStatus("ready");
+    setTimeout(() => {
+      setStatus("ready");
+    }, 500);
   }, [ticketId]);
 
   const switchTaskComplete = useCallback(

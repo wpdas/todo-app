@@ -32,7 +32,9 @@ function Home() {
     // Load tickets
     if (auth.userId) {
       getTicketList().then((tickets) => setTickets(tickets));
-      isReady(true);
+      setTimeout(() => {
+        isReady(true);
+      }, 500);
     }
   }, [auth]);
 
