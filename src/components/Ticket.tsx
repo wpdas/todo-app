@@ -89,6 +89,7 @@ const Ticket: React.FC<Props> = ({ ticketId, name, onDeleteTicket }) => {
       borderRadius={8}
       minW={isLargerThan560 ? "300px" : "95%"}
       minH="300px"
+      maxW="500px"
     >
       <Box
         display="flex"
