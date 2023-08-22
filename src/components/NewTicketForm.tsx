@@ -21,6 +21,7 @@ const NewTicketForm: React.FC<Props> = ({ onCreateTicket }) => {
     const updatedTickets = await createTicket({ name: ticketName });
     setStatus("ready");
     onCreateTicket(updatedTickets);
+    setTicketName("");
   }, [ticketName, onCreateTicket]);
 
   const disabled = ticketName.length < 3;

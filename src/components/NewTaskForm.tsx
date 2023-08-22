@@ -31,6 +31,7 @@ const NewTaskForm: React.FC<Props> = ({ ticketId, onCreateTask }) => {
     });
     setStatus("ready");
     onCreateTask(updatedTasks);
+    setTaskDescription("");
   }, [ticketId, taskDescription, onCreateTask]);
 
   const disabled = taskDescription.length < 3;
