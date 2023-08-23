@@ -87,7 +87,7 @@ function Home() {
         flexWrap="wrap"
         justifyContent="center"
         mt={isLargerThan376 ? 100 : 130}
-        pb={8}
+        pb={16}
       >
         {tickets.length === 0 && ready && (
           <Text color="gray.300">No Tickets</Text>
