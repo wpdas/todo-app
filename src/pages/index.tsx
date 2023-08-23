@@ -38,8 +38,6 @@ function Home() {
     }
   }, [auth]);
 
-  console.log(ready, tickets);
-
   if (!ready) {
     return (
       <Container>
