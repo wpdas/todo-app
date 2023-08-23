@@ -33,8 +33,10 @@ const Ticket: React.FC<Props> = ({ ticketId, name, onDeleteTicket }) => {
   const { showModal } = useModal();
 
   useEffect(() => {
-    getTasks({ ticketId }).then((tasks) => setTasks(tasks));
-    setStatus("ready");
+    getTasks({ ticketId }).then((tasks) => {
+      setTasks(tasks);
+      setStatus("ready");
+    });
   }, [ticketId]);
 
   const switchTaskComplete = useCallback(
@@ -87,7 +89,7 @@ const Ticket: React.FC<Props> = ({ ticketId, name, onDeleteTicket }) => {
       border="1px solid"
       borderColor="purple.200"
       borderRadius={8}
-      minW={isLargerThan560 ? "300px" : "95%"}
+      minW={isLargerThan560 ? "300px" : "100%"}
       minH="300px"
       maxW="500px"
     >

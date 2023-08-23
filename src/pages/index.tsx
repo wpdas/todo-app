@@ -31,10 +31,14 @@ function Home() {
   useEffect(() => {
     // Load tickets
     if (auth.userId) {
-      getTicketList().then((tickets) => setTickets(tickets));
-      isReady(true);
+      getTicketList().then((tickets) => {
+        setTickets(tickets);
+        isReady(true);
+      });
     }
   }, [auth]);
+
+  console.log(ready, tickets);
 
   if (!ready) {
     return (
@@ -83,6 +87,7 @@ function Home() {
         flexWrap="wrap"
         justifyContent="center"
         mt={isLargerThan376 ? 100 : 130}
+        pb={8}
       >
         {tickets.length === 0 && ready && (
           <Text color="gray.300">No Tickets</Text>
